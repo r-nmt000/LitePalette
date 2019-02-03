@@ -1,20 +1,24 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation";
 
-import HomeScreen  from './components/AllNotes'
-import DetailScreen from './components/SingleNote'
+import AllDecks  from './components/AllDecks'
+import SingleNote from './components/SingleNote'
+import NotesInDeck from "./components/NotesInDeck";
 
 const AppNavigator = createStackNavigator(
   {
-    Home: {
-      screen: HomeScreen,
+    AllDecks: {
+      screen: AllDecks,
     },
-    Details: {
-      screen: DetailScreen,
+    NotesInDeck: {
+      screen: NotesInDeck,
+    },
+    SingleNote: {
+      screen: SingleNote,
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'AllDecks',
   }
 );
 
