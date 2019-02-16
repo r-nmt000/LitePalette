@@ -1,6 +1,7 @@
 import React from 'react';
 import {ScrollView, View} from 'react-native';
 import { ListItem } from 'react-native-elements'
+import NewNoteButton from "./NewNoteButton";
 
 const list = [
   {
@@ -59,19 +60,20 @@ export default class NotesInDeck extends React.Component {
   render() {
     return (
       <ScrollView>
-      <View>
-        {
-          list.map((l, i) => (
-            <ListItem
-              key={i}
-              leftAvatar={{ source: { uri: l.avatar_url } }}
-              title={l.name}
-              subtitle={l.subtitle}
-              onPress={() => this.props.navigation.navigate('SingleNote')}
-            />
-          ))
-        }
-      </View>
+        <View>
+          {
+            list.map((l, i) => (
+              <ListItem
+                key={i}
+                leftAvatar={{ source: { uri: l.avatar_url } }}
+                title={l.name}
+                subtitle={l.subtitle}
+                onPress={() => this.props.navigation.navigate('SingleNote')}
+              />
+            ))
+          }
+        </View>
+        <NewNoteButton/>
       </ScrollView>
     );
   }
