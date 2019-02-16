@@ -90,7 +90,7 @@ export default class AllDecks extends React.Component {
                 leftAvatar={{ source: { uri: l.avatar_url } }}
                 title={l.name}
                 subtitle={l.subtitle}
-                onPress={() => this.props.navigation.navigate('NotesInDeckStack')}
+                onPress={() => this.props.navigation.navigate('NotesInDeckStack', {deckName: l.name})}
               />
             ))
           }

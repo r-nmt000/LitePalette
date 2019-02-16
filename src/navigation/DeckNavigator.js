@@ -18,7 +18,6 @@ const DeckNavigator = createStackNavigator(
             size={30}
             type="entypo"
             containerStyle={{ marginLeft: 10 }}
-            // onPress={() => navigation.navigate('DrawerOpen')}
             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
           />
         ),
@@ -26,6 +25,9 @@ const DeckNavigator = createStackNavigator(
     },
     NotesInDeckStack: {
       screen: NotesInDeck,
+      navigationOptions: ({ navigation }) => ({
+        title: navigation.state.params.deckName,
+      }),
     },
     SingleNoteStack: {
       screen: SingleNote,

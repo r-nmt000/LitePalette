@@ -8,8 +8,14 @@ export default class NewNoteButton extends React.Component {
     return (
       <ActionButton
         buttonColor="#DBB34D"
-        style={styles.actionButton}
-        onPress={() => console.log("notes tapped!")}/>
+        style={styles.actionButton}>
+        <ActionButton.Item buttonColor='white' title="New note" onPress={() => console.log("notes tapped!")}>
+          <Icon name="md-create" style={styles.actionButtonIcon} />
+        </ActionButton.Item>
+        <ActionButton.Item buttonColor='white' title="Study deck" onPress={() => {}}>
+          <Icon name="md-play" style={styles.actionButtonIcon} />
+        </ActionButton.Item>
+      </ActionButton>
     )
   }
 
@@ -21,6 +27,6 @@ const styles = StyleSheet.create({
   actionButtonIcon: {
     fontSize: 20,
     height: 22,
-    color: 'white',
+    color: '#DBB34D',
   },
 });
