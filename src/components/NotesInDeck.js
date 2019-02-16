@@ -59,22 +59,24 @@ const list = [
 export default class NotesInDeck extends React.Component {
   render() {
     return (
-      <ScrollView>
-        <View>
-          {
-            list.map((l, i) => (
-              <ListItem
-                key={i}
-                leftAvatar={{ source: { uri: l.avatar_url } }}
-                title={l.name}
-                subtitle={l.subtitle}
-                onPress={() => this.props.navigation.navigate('SingleNote')}
-              />
-            ))
-          }
-        </View>
+      <View style={{flex: 1}}>
+        <ScrollView>
+          <View>
+            {
+              list.map((l, i) => (
+                <ListItem
+                  key={i}
+                  leftAvatar={{ source: { uri: l.avatar_url } }}
+                  title={l.name}
+                  subtitle={l.subtitle}
+                  onPress={() => this.props.navigation.navigate('SingleNote')}
+                />
+              ))
+            }
+          </View>
+        </ScrollView>
         <NewNoteButton/>
-      </ScrollView>
+      </View>
     );
   }
 }

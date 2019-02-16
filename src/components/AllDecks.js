@@ -1,5 +1,5 @@
 import React from 'react';
-import {LayoutAnimation, ScrollView, StyleSheet, View} from 'react-native';
+import {LayoutAnimation, ScrollView, StyleSheet, View, Text} from 'react-native';
 import { List, ListItem } from 'react-native-elements'
 import NewDeckButton from "./NewDeckButton";
 
@@ -79,10 +79,10 @@ const list = [
 export default class AllDecks extends React.Component {
   render() {
     return (
-      <ScrollView
-        style={styles.scrollViewStyle}
+      <View
+        style={{flex: 1}}
       >
-        <View>
+        <ScrollView>
           {
             list.map((l, i) => (
               <ListItem
@@ -94,10 +94,9 @@ export default class AllDecks extends React.Component {
               />
             ))
           }
-          <NewDeckButton/>
-        </View>
-      </ScrollView>
-
+        </ScrollView>
+        <NewDeckButton/>
+      </View>
     );
   }
 }
