@@ -12,14 +12,17 @@ const NoteNavigator = createMaterialTopTabNavigator(
     initialRouteName: 'EditorTab',
     swipeEnabled: true,
     tabBarOptions: {
-      tabStyle: {
-        backgroundColor: 'white',
-        color: '#000000',
-      },
+      // tabStyle: {
+      //   backgroundColor: 'white',
+      //   color: '#000000',
+      // },
       style: {
         backgroundColor: 'white',
-        color: '#000000',
+        height: 40,
       },
+      labelStyle: {
+        color: 'black',
+      }
     },
   },
 );
