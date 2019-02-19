@@ -23,7 +23,7 @@ const markdown = `
 
 const htmlContent = marked(markdown);
 
-export default class SingleNote extends React.Component {
+export default class NotePreviewer extends React.Component {
   render() {
     return (
       <ScrollView style={{ flex: 1 }}>

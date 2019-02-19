@@ -69,7 +69,7 @@ export default class NotesInDeck extends React.Component {
                   leftAvatar={{ source: { uri: l.avatar_url } }}
                   title={l.name}
                   subtitle={l.subtitle}
-                  onPress={() => this.props.navigation.navigate('SingleNoteStack')}
+                  onPress={() => this.props.navigation.navigate('NoteStack')}
                 />
               ))
             }

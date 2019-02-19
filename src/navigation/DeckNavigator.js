@@ -3,8 +3,8 @@ import { createStackNavigator, DrawerActions } from "react-navigation";
 import { Icon } from 'react-native-elements';
 
 import AllDecks  from '../components/AllDecks'
-import SingleNote from '../components/SingleNote'
 import NotesInDeck from "../components/NotesInDeck";
+import NoteNavigator from "./NoteNavigator";
 
 const DeckNavigator = createStackNavigator(
   {
@@ -29,8 +29,8 @@ const DeckNavigator = createStackNavigator(
         title: navigation.state.params.deckName,
       }),
     },
-    SingleNoteStack: {
-      screen: SingleNote,
+    NoteStack: {
+      screen: NoteNavigator,
     },
   },
   {
