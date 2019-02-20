@@ -12,6 +12,10 @@ const DeckNavigator = createStackNavigator(
       screen: AllDecks,
       navigationOptions: ({ navigation }) => ({
         title: 'All decks',
+        headerStyle: {
+          backgroundColor: '#F9F9F9',
+          elevation: 0,
+        },
         headerLeft: (
           <Icon
             name="menu"
@@ -27,10 +31,21 @@ const DeckNavigator = createStackNavigator(
       screen: NotesInDeck,
       navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.deckName,
+        headerStyle: {
+          backgroundColor: '#F9F9F9',
+          elevation: 0,
+        },
       }),
     },
     NoteStack: {
       screen: NoteNavigator,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Note',
+        headerStyle: {
+          backgroundColor: '#F9F9F9',
+          elevation: 0,
+        },
+      }),
     },
   },
   {
