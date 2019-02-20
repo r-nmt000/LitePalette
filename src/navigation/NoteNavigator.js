@@ -5,24 +5,31 @@ import NotePreviewer from '../components/NotePreviewer'
 
 const NoteNavigator = createMaterialTopTabNavigator(
   {
-    EditorTab: NoteEditor,
-    PreviewTab: NotePreviewer,
+    EditorTab: {
+      screen: NoteEditor,
+      navigationOptions: () => ({
+        title: 'Editor',
+      }),
+    },
+    PreviewTab: {
+      screen: NotePreviewer,
+      navigationOptions: () => ({
+        title: 'Preview',
+      }),
+    },
   },
   {
     initialRouteName: 'EditorTab',
     swipeEnabled: true,
     tabBarOptions: {
-      // tabStyle: {
-      //   backgroundColor: 'white',
-      //   color: '#000000',
-      // },
       style: {
         backgroundColor: 'white',
         height: 40,
       },
       labelStyle: {
         color: 'black',
-      }
+      },
+      upperCaseLabel: false,
     },
   },
 );
