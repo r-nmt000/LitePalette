@@ -661,3 +661,5 @@ $RECYCLE.BIN/
 # Watchman config file
 .watchmanconfig
 
+# webpack output directory
+./src/components/note/webview/dist

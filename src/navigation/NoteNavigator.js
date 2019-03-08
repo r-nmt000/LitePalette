@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation';
-import NoteEditor from '../components/NoteEditor'
-import NotePreviewer from '../components/NotePreviewer'
+import NoteEditor from '../components/note/NoteEditor'
+import NotePreviewer from '../components/note/NotePreviewer'
 
 const NoteNavigator = createMaterialTopTabNavigator(
   {
