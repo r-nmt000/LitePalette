@@ -1,18 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
+// const nodeExternals = require('webpack-node-externals');
 module.exports = {
-  target: 'node',
-  externals: [nodeExternals()],
   entry: {
     editor: './src/components/note/webview/componentEditor.js'
   },
   output: {
     path: path.join(__dirname, './src/components/note/webview/dist'),
     filename: '[name].bundle.js'
-  },
-  resolve: {
-    extensions: ['.js']
   },
   module: {
     rules: [
@@ -21,8 +16,8 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.js$/,
-        // include: [path.resolve(__dirname, 'src/components/note')],
+        test: /\.jsx?$/,
+        include: [path.resolve(__dirname, 'src/components/note/webview')],
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -36,7 +31,7 @@ module.exports = {
                   }
                 }
               ],
-              '@babel/preset-react',
+              '@babel/preset-react'
             ],
             plugins: ['babel-plugin-transform-object-rest-spread'],
             babelrc: false
