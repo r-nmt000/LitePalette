@@ -1,39 +1,34 @@
 import React from 'react';
+import {Controlled as CodeMirror} from 'react-codemirror2'
 
 
 export default class NoteEditorCore extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '### [CodeMirror](http://codemirror.net)\n' +
+  'A versatile _text_ editor implemented in **JavaScript*** for the browser. \n' +
+  'It is specialized for editing `code`, and comes with a number of language modes and addons that implement more advanced editing functionality.'
+    }
+  }
 
   render() {
     return (
-      <div
-        id="Quill-Editor-Container"
-        style={{
-          height: '100%',
-          backgroundColor: '#dddddd',
-          display: 'flex',
-          flexDirection: 'column'
+      <div>
+      <CodeMirror
+        value={this.state.value}
+        options={{
+          mode: 'markdown',
+          theme: 'material',
+          lineNumbers: true,
+          readOnly: false
         }}
-      >
-        <div
-          style={{
-            height: '100%',
-            backgroundColor: '#ffebba',
-            display: 'flex',
-            flexDirection: 'column',
-            paddingVertical: 5
-          }}
-        >
-          <div
-            id="editor"
-            style={{
-              backgroundColor: '#FAEBD7',
-              fontSize: '20px',
-              height: 'calc(100% - 42px)'
-            }}
-          >
-            <p>Hello World!</p>
-          </div>
-        </div>
+        onBeforeChange={(editor, data, value) => {
+          this.setState({value});
+        }}
+        onChange={(editor, data, value) => {
+        }}
+      />
       </div>
     );
   }
