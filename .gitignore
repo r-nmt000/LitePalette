@@ -1,6 +1,9 @@
 # Created by https://www.gitignore.io/api/node,java,xcode,swift,linux,macos,windows,android,reactnative,jetbrains+all,androidstudio
 # Edit at https://www.gitignore.io/?templates=node,java,xcode,swift,linux,macos,windows,android,reactnative,jetbrains+all,androidstudio
 
+### Original ###
+dist/
+
 ### Android ###
 # Built application files
 *.apk
@@ -663,3 +666,4 @@ $RECYCLE.BIN/
 
 # webpack output directory
 ./src/components/note/webview/dist
+
