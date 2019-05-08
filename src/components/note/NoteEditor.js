@@ -140,7 +140,6 @@ export default class NoteEditor extends React.Component {
         {renderIf(!this.state.webViewFilesNotAvailable)(
           <WebView
             style={{
-              ...StyleSheet.absoluteFillObject,
               backgroundColor: '#ffebba',
               padding: 10
             }}

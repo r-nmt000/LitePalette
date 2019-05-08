@@ -3,6 +3,7 @@ require('codemirror/theme/idea.css');
 import React from 'react';
 import {Controlled as CodeMirror} from 'react-codemirror2'
 import 'codemirror/mode/markdown/markdown';
+import '../../../css/CodeMirror.css'
 
 export default class NoteEditorCore extends React.Component {
   constructor(props) {
@@ -24,7 +25,11 @@ export default class NoteEditorCore extends React.Component {
           mode: 'markdown',
           theme: 'idea',
           readOnly: false,
-          lineWrapping: true
+          lineWrapping: true,
+          spellcheck: true,
+          tabSize: 2,
+          autofocus: true,
+          fixedGutter: true
         }}
         onBeforeChange={(editor, data, value) => {
           this.setState({value});
