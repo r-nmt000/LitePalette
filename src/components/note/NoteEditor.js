@@ -24,7 +24,8 @@ export default class NoteEditor extends React.Component {
     super();
     this.state = {
       webViewNotLoaded: true, // flag to show activity indicator
-      webViewFilesNotAvailable: true
+      webViewFilesNotAvailable: true,
+      content: ""
     };
   }
 
@@ -200,3 +201,4 @@ const styles = StyleSheet.create({
     shadowOpacity: 1.0
   }
 });
+
