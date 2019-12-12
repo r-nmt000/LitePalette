@@ -174,7 +174,8 @@ export default class NoteEditor extends React.Component {
 }
 
 NoteEditor.propTypes = {
-  contentToDisplay: PropTypes.object
+  contentToDisplay: PropTypes.object,
+  updateContent: PropTypes.func
 };
 
 const styles = StyleSheet.create({
