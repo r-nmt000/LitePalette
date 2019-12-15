@@ -1,5 +1,5 @@
 import React from 'react';
-import { createMaterialTopTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import NoteEditor from '../components/note/NoteEditor'
 import NotePreviewer from '../components/note/NotePreviewer'
 

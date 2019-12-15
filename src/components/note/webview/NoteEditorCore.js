@@ -5,6 +5,20 @@ import {Controlled as CodeMirror} from 'react-codemirror2'
 import 'codemirror/mode/markdown/markdown';
 import '../../../css/CodeMirror.css'
 
+import 'hypermd/core';
+import 'hypermd/mode/hypermd';
+
+import 'hypermd/addon/hide-token';
+import 'hypermd/addon/cursor-debounce';
+import 'hypermd/addon/fold';
+import 'hypermd/addon/read-link';
+import 'hypermd/addon/click';
+import 'hypermd/addon/hover';
+import 'hypermd/addon/paste';
+import 'hypermd/addon/insert-file';
+import 'hypermd/addon/mode-loader';
+import 'hypermd/addon/table-align';
+
 export default class NoteEditorCore extends React.Component {
   constructor(props) {
     super(props);
@@ -22,8 +36,20 @@ export default class NoteEditorCore extends React.Component {
       <CodeMirror
         value={this.state.value}
         options={{
-          mode: 'markdown',
-          theme: 'idea',
+          mode: 'hypermd',
+          theme: 'hypermd-light',
+          hmdFold: {
+            image: true,
+            link: true,
+            math: true,
+          },
+          hmdHideToken: true,
+          hmdCursorDebounce: true,
+          hmdPaste: true,
+          hmdClick: true,
+          hmdHover: true,
+          hmdTableAlign: true,
+
           readOnly: false,
           lineWrapping: true,
           spellcheck: true,

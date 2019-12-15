@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, WebView, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { WebView } from 'react-native-webview';
 import renderIf from 'render-if';
 import * as FileSystem from 'expo-file-system';
 import * as config from '../../config/config';

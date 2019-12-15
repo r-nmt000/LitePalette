@@ -1,5 +1,5 @@
 import React from "react";
-import {createDrawerNavigator, DrawerItems} from "react-navigation";
+import {createDrawerNavigator, DrawerItems} from "react-navigation-drawer";
 import { Icon } from 'react-native-elements';
 
 import AllDecks  from '../components/AllDecks'

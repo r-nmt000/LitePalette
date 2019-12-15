@@ -1,5 +1,6 @@
 import React from "react";
-import { createStackNavigator, DrawerActions } from "react-navigation";
+import { DrawerActions } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 import { Icon } from 'react-native-elements';
 
 import AllDecks  from '../components/AllDecks'
