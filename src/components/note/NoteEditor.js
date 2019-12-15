@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, WebView, ActivityIndicator, StyleSheet } from 'react-native';
 import renderIf from 'render-if';
-import { FileSystem } from 'expo';
+import * as FileSystem from 'expo-file-system';
 import * as config from '../../config/config';
 import PropTypes from 'prop-types';
 
