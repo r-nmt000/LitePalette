@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerActions } from "react-navigation";
+import { DrawerActions } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
 import { Icon } from 'react-native-elements';
 
