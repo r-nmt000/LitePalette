@@ -9,6 +9,7 @@
   "dependencies": {
     "codemirror": "^5.44.0",
     "expo": "^36.0.0",
+    "expo-asset-utils": "^1.2.0",
     "expo-file-system": "~8.0.0",
     "marked": "^0.8.0",
     "react": "16.9.0",

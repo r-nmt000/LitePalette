@@ -3,6 +3,7 @@ import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 import renderIf from 'render-if';
 import * as FileSystem from 'expo-file-system';
+import AssetUtils from 'expo-asset-utils';
 import * as config from '../../config/config';
 import PropTypes from 'prop-types';
 
@@ -19,7 +20,9 @@ const FILES_TO_DOWNLOAD = [
 ];
 
 const MESSAGE_PREFIX = 'react-native-webview-quilljs';
+
 export default class NoteEditor extends React.Component {
+
 
   constructor() {
     super();
@@ -30,8 +33,11 @@ export default class NoteEditor extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.downloadWebViewFiles(FILES_TO_DOWNLOAD);
+    const file =  await AssetUtils.resolveAsync(require('./webview/dist/NoteEditor.html'));
+    const fileContents =  await FileSystem.readAsStringAsync(file.localUri);
+    this._html = fileContents;
   }
 
   downloadWebViewFiles = async filesToDownload => {
@@ -141,14 +147,17 @@ export default class NoteEditor extends React.Component {
         )}
         {renderIf(!this.state.webViewFilesNotAvailable)(
           <WebView
+            allowFileAccess={true}
             style={{
               backgroundColor: '#ffebba',
               padding: 10
             }}
             ref={this.createWebViewRef}
+            originWhitelist={['*']}
             source={
               config.USE_LOCAL_FILES
-                ? require('./webview/dist/NoteEditor.html')
+              ? this._html
+                // ? require('./webview/dist/NoteEditor.html')
                 // ? { uri: 'https://reactnavigation.org/en/'}
                 : { uri: INDEX_FILE_PATH }
             }
